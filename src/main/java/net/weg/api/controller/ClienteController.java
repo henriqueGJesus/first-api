@@ -1,8 +1,10 @@
 package net.weg.api.controller;
 
 import lombok.AllArgsConstructor;
-import net.weg.api.model.Cliente;
+import net.weg.api.model.DTO.UsuarioCadastroDTO;
+import net.weg.api.model.entity.Cliente;
 import net.weg.api.service.ClienteService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -29,13 +31,14 @@ public class ClienteController {
     }
 
     @PostMapping
-    public void inserir(@RequestBody Cliente cliente){
-        clienteService.salvar(cliente);
+    public void inserir(@RequestBody UsuarioCadastroDTO usuarioCadastroDTO){
+
+        clienteService.salvar(usuarioCadastroDTO);
     }
 
     @PutMapping
-    public void atualizar(@RequestBody Cliente clienteAtualizado){
-        clienteService.salvar(clienteAtualizado);
+    public void atualizar(@RequestBody UsuarioCadastroDTO usuarioCadastroDTO){
+        clienteService.salvar(usuarioCadastroDTO);
     }
 
 }

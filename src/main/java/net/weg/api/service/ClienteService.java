@@ -1,10 +1,12 @@
 package net.weg.api.service;
 
 import lombok.AllArgsConstructor;
-import net.weg.api.model.Cliente;
+import net.weg.api.model.DTO.UsuarioCadastroDTO;
+import net.weg.api.model.entity.Cliente;
 
 import net.weg.api.repository.ClienteRepository;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -17,8 +19,9 @@ public class ClienteService {
 
     private final ClienteRepository usuarioRepository;
 
-    public void salvar(Cliente cliente){
-
+    public void salvar(UsuarioCadastroDTO usuarioCadastroDTO){
+        Cliente cliente = new Cliente();
+        BeanUtils.copyProperties(usuarioCadastroDTO,cliente);
         usuarioRepository.save(cliente);
     }
 

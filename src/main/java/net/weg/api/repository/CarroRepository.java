@@ -1,7 +1,7 @@
 package net.weg.api.repository;
 
-import net.weg.api.model.Carro;
-import net.weg.api.model.Seguro;
+import net.weg.api.model.entity.Carro;
+import net.weg.api.model.entity.Seguro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,5 +13,7 @@ public interface CarroRepository extends JpaRepository<Carro, Integer> {
 
     List<Carro> findBySeguro (Seguro seguro);
 
-    List<Carro> findBySeguro_SeguroId(Integer id);
+    List<Carro> findBySeguro_SeguradoraId(Integer id);
+
+    Boolean existsByPlaca(String placa);
 }

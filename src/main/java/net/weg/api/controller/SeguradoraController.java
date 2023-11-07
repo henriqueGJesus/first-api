@@ -1,9 +1,7 @@
 package net.weg.api.controller;
 
 import lombok.AllArgsConstructor;
-import net.weg.api.model.Carro;
-import net.weg.api.model.Seguradora;
-import net.weg.api.service.CarroService;
+import net.weg.api.model.entity.Seguradora;
 import net.weg.api.service.SeguradoraService;
 import org.springframework.web.bind.annotation.*;
 
